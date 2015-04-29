@@ -1,10 +1,11 @@
 var async = require('async');
 var htmlDb = require('./models/htmldb').htmldb;
 var Boom = require('boom');
+var Parser = require('./lib/parser');
 
 function parce(text,callback){
   //TODO
-  var html = "<b>" + text + "</b>";
+  var html = Parser(text);
   //
   return callback(null, text, html);
 }

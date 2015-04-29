@@ -15,6 +15,7 @@ var schema = new Schema({
 
 schema.statics.saveHtml = function(text, html, callback){
   var htmlDb = this;
+  console.log(text, html);
   var newText = new htmlDb({ text: text, html: html });
 
   newText.save(function (err, newText) {
@@ -28,7 +29,6 @@ schema.statics.getHtml = function(id, callback){
 
   try {
     var _id = new ObjectID(id);
-    console.log(_id);
   } catch (e) {
     console.error(e);
     callback("Bad id");
