@@ -1,0 +1,10 @@
+{
+  "mongoose":{
+    "uri":"mongodb://localhost/markdown",
+    "options": {
+      "server": {
+        "keepAlive" : 1
+      }
+    }
+  }
+}

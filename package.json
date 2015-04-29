@@ -10,13 +10,27 @@
     "type": "git",
     "url": "https://github.com/klik1301/markdown.git"
   },
-  "author": "Alex Shestmintsev",
+  "author": {
+    "name": "Alex Shestmintsev"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/klik1301/markdown/issues"
   },
   "homepage": "https://github.com/klik1301/markdown",
   "dependencies": {
-    "hapi": "^8.4.0"
-  }
+    "async": "^0.9.0",
+    "boom": "^2.7.1",
+    "mongodb": "^2.0.28",
+    "mongoose": "^4.0.2",
+    "nconf": "^0.7.1",
+    "path": "^0.11.14"
+  },
+  "gitHead": "b4d294626a56185707b0a5556fa939f2da66f890",
+  "readme": "ERROR: No README data found!",
+  "_id": "markdown@0.0.1",
+  "_shasum": "87d048380bbfcf27402709123d7abcbe82031430",
+  "_from": "git://github.com/klik1301/markdown.git",
+  "_resolved": "git://github.com/klik1301/markdown.git#b4d294626a56185707b0a5556fa939f2da66f890",
+  "_fromGithub": true
 }
