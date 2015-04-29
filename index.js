@@ -1,32 +1,26 @@
-var Hapi = require('hapi');
+exports.register = function (server, options, next) {
 
-// Create a server with a host and port
-var server = new Hapi.Server();
-server.connection({
-  host: 'localhost',
-  port: 8000
-});
+  server.route({
+    method: 'GET',
+    path:'/markdown/get/{id}',
+    handler: function (request, reply) {
+      reply('Hello, ' + encodeURIComponent(request.params.id) + '!');
 
-// Add the route
-server.route({
-  method: 'GET',
-  path:'/markdown/get/{id}',
-  handler: function (request, reply) {
-    reply('Hello, ' + encodeURIComponent(request.params.id) + '!');
+    }
+  });
 
-  }
-});
+  server.route({
+    method: 'POST',
+    path:'/markdown/save',
+    handler: function (request, reply) {
+      reply('Your text is "' + request.payload.text + '"!');
 
-server.route({
-  method: 'POST',
-  path:'/markdown/save',
-  handler: function (request, reply) {
-    reply('Your text is "' + request.payload.text + '"!');
+    }
+  });
 
-  }
-});
+  next();
+};
 
-// Start the server
-server.start(function () {
-  console.log('Server running at:', server.info.uri);
-});
+exports.register.attributes = {
+  pkg: require('./package.json')
+};

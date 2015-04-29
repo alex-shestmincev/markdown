@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/klik1301/markdown",
   "dependencies": {
-    "hapi": "^8.4.0"
+
   }
 }
