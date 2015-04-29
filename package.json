@@ -1,0 +1,22 @@
+{
+  "name": "markdown",
+  "version": "0.0.1",
+  "description": "Module to parse string to html with node.js and Hapi.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klik1301/markdown.git"
+  },
+  "author": "Alex Shestmintsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klik1301/markdown/issues"
+  },
+  "homepage": "https://github.com/klik1301/markdown",
+  "dependencies": {
+    "hapi": "^8.4.0"
+  }
+}
