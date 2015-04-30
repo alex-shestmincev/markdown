@@ -5,6 +5,7 @@ var headers_test = {
   "##header2" : "<h2>header2</h2>",
   "###header3" : "<h3>header3</h3>",
   "######header6" : "<h6>header6</h6>",
+  " #header1" : "<p> #header1</p>",
 }
 
 var paragraf_test = {
@@ -14,11 +15,16 @@ var paragraf_test = {
 var em_test = {
   "*test*" : "<p><em>test</em></p>",
   "*test* this test using *test*" : "<p><em>test</em> this test using <em>test</em></p>",
+  //negative
+  "*test" : "<p>*test</p>",
+  "test**" : "<p>test**</p>",
 }
 
 var strong_test = {
   "**test**" : "<p><strong>test</strong></p>",
   "**test** this test using **test**" : "<p><strong>test</strong> this test using <strong>test</strong></p>",
+  //negative
+  "**test" : "<p>**test</p>",
 }
 
 var link_test = {
@@ -40,11 +46,6 @@ var big_html = [
   "<h2>Link</h2>",
   '<p><a href="https://github.com/edjafarov">github link</a></p>'
 ];
-
-
-
-
-
 
 describe("Headers", function () {
   it("should parse string and return headers (h1,h2,h3) tags", function () {

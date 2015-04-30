@@ -4,9 +4,7 @@ var Boom = require('boom');
 var Parser = require('./lib/parser');
 
 function parce(text,callback){
-  //TODO
   var html = Parser(text);
-  //
   return callback(null, text, html);
 }
 
