@@ -32,7 +32,7 @@ exports.register = function (server, options, next) {
         },
         function(obj,callback){
           if (obj) {
-            reply('Result is: "' + obj + '"!');
+            reply(obj);
           }
         }
       ], function(err,result){
@@ -51,17 +51,20 @@ exports.register = function (server, options, next) {
 
         async.waterfall([
           function(callback){
+            if (!text) return callback("Empty post data");
             parce(text, callback);
           },
           function(text, html, callback){
             saveHtml(text, html,callback);
+          },
+          function(result,callback){
+            if (result) reply(result);
           }
         ], function(err,result){
           if (err){
-            reply('Your during save: "' + err + '"!');
+            reply(Boom.notFound(err));
           }
-          console.log(result);
-          reply('Result is: "' + result + '"!');
+
         }
       );
 

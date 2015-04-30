@@ -4,7 +4,7 @@
   "description": "Module to parse string to html with node.js and Hapi.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node spec"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,8 @@
   "_shasum": "87d048380bbfcf27402709123d7abcbe82031430",
   "_from": "git://github.com/klik1301/markdown.git",
   "_resolved": "git://github.com/klik1301/markdown.git#b4d294626a56185707b0a5556fa939f2da66f890",
-  "_fromGithub": true
+  "_fromGithub": true,
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
 }

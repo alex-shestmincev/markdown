@@ -15,13 +15,14 @@ var schema = new Schema({
 
 schema.statics.saveHtml = function(text, html, callback){
   var htmlDb = this;
-  console.log(text, html);
+  //console.log(text, html);
   var newText = new htmlDb({ text: text, html: html });
 
   newText.save(function (err, newText) {
-    if (err) return console.error(err);
+    if (err) return callback("Error during saving");
     var id = newText._id;
-    return callback(null,id);
+    var result = {"status":1,"id":id};
+    return callback(null,result);
   });
 }
 
@@ -42,7 +43,8 @@ schema.statics.getHtml = function(id, callback){
     }
 
     if (obj){
-      callback(null,obj);
+      var result = {"status":1,"text":obj.text,"html":obj.html};
+      callback(null,result);
     }else{
       callback("Cannot find html by id");
     }
