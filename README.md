@@ -2,10 +2,14 @@
 Module to parce string to html
 
 ## Installing
+
+```javascript
 npm install github:klik1301/markdown --save
+```
 
 ## register in your index.js
 
+```javascript
 server.register([
   {
     register: require('markdown'),
@@ -16,3 +20,4 @@ server.register([
     console.error('Failed to load a plugin:', err);
   }
 });
+```
